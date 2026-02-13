@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Marselina Adeline 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family:'Poppins',sans-serif;
+    background: radial-gradient(circle at top,#1c1c2e,#0f0f18);
+    color:white;
+    overflow-x:hidden;
+    text-align:center;
+}
+
+.container{
+    padding:60px 20px;
+    max-width:1000px;
+    margin:auto;
+    position:relative;
+    z-index:2;
+    animation:fadeIn 2s ease-in-out;
+}
+
+h1{
+    font-weight:600;
+    font-size:32px;
+}
+
+.message{
+    margin-top:30px;
+    font-weight:300;
+    line-height:1.8;
+    font-size:16px;
+    opacity:0;
+    animation:fadeText 3s forwards;
+    animation-delay:2s;
+}
+
+.gallery{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:1fr 1.3fr 1fr;
+    gap:25px;
+    align-items:center;
+}
+
+.gallery img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.4s;
+    box-shadow:0 0 30px rgba(255,255,255,0.1);
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+button{
+    margin-top:40px;
+    padding:12px 30px;
+    border-radius:25px;
+    border:none;
+    font-weight:500;
+    cursor:pointer;
+    background:white;
+    color:black;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ddd;
+}
+
+.jasmine{
+    position:fixed;
+    animation:fall linear forwards;
+    pointer-events:none;
+    filter:drop-shadow(0 0 8px rgba(255,255,255,0.6));
+    z-index:1;
+}
+
+@keyframes fall{
+    from{transform:translateY(-10vh);}
+    to{transform:translateY(110vh);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes fadeText{
+    to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- GANTI LINK MP3 DI BAWAH DENGAN FILE GORILLAZ MP3 PUBLIC -->
+<audio autoplay loop>
+    <source src="https://your-music-link.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+    <h1>Untuk Kakak Adel🌸</h1>
+
+    <div class="message">
+        Aku tahu kok mungkin ini sederhana.<br><br>
+
+        Kan kak adel suka photography,<br>
+        Aku juga ada sii beberapa fotonya kak adel, HEHEHE.<br>(Sorry ngambilnya diem" :) )<br><br>
+
+        Kak adel punya cara sendiri membuat hal biasa terasa lebih menarik, asik, seru dan fun.<br>
+        Mungkin bagi Kak Adel itu hal kecil tapi bagi kuu ngga kok.<br><br>
+
+        Aku mungkin masih harus banyak belajar,<br>
+        tapi satu hal yang pasti <br>
+        Aku tulus menghargai dan mengagumi kak adell <3.<br><br>
+
+        Aku tau mungkin akhir" ini terasa berat,<br>
+        Tapi aku juga yakin Kak Adel pasti bisa kokk<br>
+        <br>
+        SEMANGATT KAKKK
+
+        Happy Valentine’s Day 🤍
+    </div>
+
+    <div class="gallery">
+        <!-- GANTI DENGAN FOTO DIA -->
+        <img src="FOTO1.jpeg">
+        <img src="FOTO2.jpeg">
+        <img src="FOTO3.jpeg">
+    </div>
+
+    <button onclick="extraMessage()">Klik Pelan-Pelan 🤍</button>
+
+</div>
+
+<script>
+
+// =========================
+// FLOWER SYSTEM
+// =========================
+
+function burstFlowers(){
+    for(let i=0;i<150;i++){
+        createFlower(true);
+    }
+}
+
+function startBackgroundFlowers(){
+    setInterval(()=>{
+        createFlower(false);
+    },500);
+}
+
+function createFlower(isBurst){
+    const flower=document.createElement("div");
+    flower.classList.add("jasmine");
+    flower.innerHTML="🌼";
+
+    flower.style.left=Math.random()*window.innerWidth+"px";
+
+    let size=isBurst?20+Math.random()*25:15+Math.random()*10;
+    flower.style.fontSize=size+"px";
+
+    let duration=isBurst?4+Math.random()*2:10+Math.random()*6;
+    flower.style.animationDuration=duration+"s";
+
+    document.body.appendChild(flower);
+
+    setTimeout(()=>{
+        flower.remove();
+    },duration*1000);
+}
+
+function extraMessage(){
+    alert("Terima kasih sudah menjadi versi terbaik dari dirimu sendiri 🤍");
+}
+
+burstFlowers();
+
+setTimeout(()=>{
+    startBackgroundFlowers();
+},4000);
+
+</script>
+
+</body>
+</html>
